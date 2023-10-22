@@ -7,6 +7,7 @@ public class SignupState {
     private String passwordError = null;
     private String repeatPassword = "";
     private String repeatPasswordError = null;
+    private String[] deletedUsers = null;
 
     public SignupState(SignupState copy) {
         username = copy.username;
@@ -44,6 +45,9 @@ public class SignupState {
     public String getRepeatPasswordError() {
         return repeatPasswordError;
     }
+    public String[] getDeletedUsers() {
+        return deletedUsers;
+    }
 
     public void setUsername(String username) {
         this.username = username;
@@ -67,6 +71,10 @@ public class SignupState {
 
     public void setRepeatPasswordError(String repeatPasswordError) {
         this.repeatPasswordError = repeatPasswordError;
+    }
+
+    public void setDeletedUsers(String[] deletedUsers) {
+        this.deletedUsers = deletedUsers;
     }
 
     @Override
