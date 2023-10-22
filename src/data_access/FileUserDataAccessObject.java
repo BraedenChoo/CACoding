@@ -67,10 +67,10 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
     }
 
     public String[] clear() {
-        String[] users = (String[]) accounts.keySet().toArray();
+        String[] usersArray = accounts.keySet().toArray(new String[0]);
         accounts.clear();
         this.save();
-        return users;
+        return usersArray;
     }
 
     private void save() {
