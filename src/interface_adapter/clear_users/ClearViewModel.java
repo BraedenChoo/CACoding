@@ -18,7 +18,7 @@ public class ClearViewModel {
     public static final String SIGNUP_BUTTON_LABEL = "Sign up";
     public static final String CANCEL_BUTTON_LABEL = "Cancel";
 
-    private SignupState state = new SignupState();
+    private ClearState state = new ClearState();
 
     public ClearViewModel() {
         super();
@@ -36,7 +36,7 @@ public class ClearViewModel {
         support.addPropertyChangeListener(listener);
     }
 
-    public SignupState getState() {
+    public ClearState getState() {
         return state;
     }
 }

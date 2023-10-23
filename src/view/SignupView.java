@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapter.clear_users.ClearState;
 import interface_adapter.signup.SignupController;
 import interface_adapter.signup.SignupState;
 import interface_adapter.signup.SignupViewModel;
@@ -182,9 +183,11 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
         SignupState state = (SignupState) evt.getNewValue();
         if (state.getUsernameError() != null) {
             JOptionPane.showMessageDialog(this, state.getUsernameError());
-        } else if (state.getDeletedUsers() != null) {
+        }
+        ClearState clearState = (ClearState) state;
+        if (clearState.getDeletedUsers() != null) {
             StringBuilder s = new StringBuilder();
-            for (String username: state.getDeletedUsers()) {
+            for (String username: clearState.getDeletedUsers()) {
                 s.append(username).append("\n");
             }
             String usernames = s.toString().strip();
